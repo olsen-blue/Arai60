@@ -109,4 +109,56 @@ class Solution:
         return None
 ```
 
+##Step4
+-　（解法１）について、小田さんに長いYの部分を後ろへ、とアドバイスいただいたので修正してみる。
+https://discord.com/channels/1084280443945353267/1322513618217996338/1322841650162303008
+- 具体的には「while正常終了後のelseブロックの利用（Python特有）」と「無限ループの方法」にトライ
+https://discord.com/channels/1084280443945353267/1221030192609493053/1225674901445283860
 
+```python
+##while正常終了後のelseブロックの利用（Python特有）、により長いYを外出し
+class Solution:
+    def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        fast = head
+        slow = head
+
+        # 衝突点の探索
+        while (fast is not None) and (fast.next is not None):
+            fast = fast.next.next
+            slow = slow.next
+            if fast == slow:
+                break
+        else :                  #while正常終了の場合こちらのelseへ
+            return None
+
+        # breakの場合のみこちらへ
+        org = head
+        while org != slow :
+            org = org.next
+            slow = slow.next
+        return org
+```
+
+```pyton
+##無限ループにより、長いYを外へ出す
+class Solution:
+    def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        fast = head
+        slow = head
+
+        while True :
+            if (fast is None) or (fast.next is None) :
+                return None
+
+            fast = fast.next.next
+            slow = slow.next
+            if fast == slow :
+                break
+
+#breakの場合こちらへ
+        org = head
+        while org != slow :
+            org = org.next
+            slow = slow.next
+        return org
+```
