@@ -139,7 +139,7 @@ class Solution:
         return org
 ```
 
-```pyton
+```python
 ##無限ループにより、長いYを外へ出す
 class Solution:
     def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
