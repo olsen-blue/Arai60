@@ -70,7 +70,7 @@ class Solution(object):
 #思考メモ
 - 小田さんにPython3の方が最近は主流だと聞いたので、Python3で書いてみる。引数と関数出力を明示的に書くことができるのが良いなと感じた。Python3で今後は行きたいと思います。
 - オブジェクトの同一性を比較するときは「is not None」とする方が良さそうということを知る。（「!= None」は値の比較であり、明示的でないとのこと。）
-```python3
+```python
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:   #Optional[ListNode]は、ListNode(ノードがないときはNone）型になることを示している。fast
         fast = head
@@ -102,7 +102,7 @@ class Solution:
 - https://leetcode.com/problems/subarray-sum-equals-k/description/
 
 -真似して書いてみる。下記でACとなりました。
-```python3
+```python
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:   #Optional[ListNode]は、ListNode(ノードがないときはNone）型になることを示している。fast
         visited = set() #空集合を作る
@@ -118,7 +118,7 @@ class Solution:
 ##Step2
 - 「while ptr」のところは「while ptr is not None」の方が明示的ではと思い、そのように修正。
 
-```python3
+```python
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:   #Optional[ListNode]は、ListNode(ノードがないときはNone）型になることを示している。fast
         visited = set ()
@@ -134,7 +134,7 @@ class Solution:
 ```
 
 ##Step3
-```python3
+```python
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:   #Optional[ListNode]は、ListNode(ノードがないときはNone）型になることを示している。fast
         visited = set()
