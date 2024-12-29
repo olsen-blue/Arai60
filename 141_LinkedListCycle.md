@@ -69,7 +69,7 @@ class Solution(object):
 ##Step4
 #思考メモ
 - 小田さんにPython3の方が最近は主流だと聞いたので、Python3で書いてみる。引数と関数出力を明示的に書くことができるのが良いなと感じた。Python3で今後は行きたいと思います。
-- Pythonでは「!= None」ではなく「not」を用いて「is not None」とする方が一般的らしいことを知る。
+- オブジェクトの同一性を比較するときは「is not None」とする方が良さそうということを知る。（「!= None」は値の比較であり、明示的でないとのこと。）
 ```python3
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:   #Optional[ListNode]は、ListNode(ノードがないときはNone）型になることを示している。fast
