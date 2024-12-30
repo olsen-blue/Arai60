@@ -59,3 +59,22 @@ class Solution:
         return head
 
 ```
+
+##Step3-1
+- 野田さんにいただいたアドバイスを反映
+ - 「:」の前のスペースを削除
+ - 略した英単語は読み手の負荷が増えるので、しない。->「cur」ではなく「node」に修正
+ - 条件式を（）で囲う書き方はあまり見られないとの頃。小田さんにも同様のコメントをいただいたので修正。
+```python
+class Solution:
+    def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        node = head
+        while node is not None and node.next is not None:
+            if node.val == node.next.val:
+                node.next = node.next.next
+                continue
+            node = node.next
+        return head
+```
+
+
