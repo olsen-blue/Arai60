@@ -123,20 +123,20 @@ class Solution:
         slow = head
 
         # 衝突点の探索
-        while (fast is not None) and (fast.next is not None):
+        while fast is not None and fast.next is not None:
             fast = fast.next.next
             slow = slow.next
             if fast == slow:
                 break
-        else :                  #while正常終了の場合こちらのelseへ
+        else:                  #while正常終了の場合こちらのelseへ
             return None
 
         # breakの場合のみこちらへ
-        org = head
-        while org != slow :
-            org = org.next
+        origin = head
+        while origin != slow:
+            origin = origin.next
             slow = slow.next
-        return org
+        return origin
 ```
 
 ```python
@@ -146,19 +146,19 @@ class Solution:
         fast = head
         slow = head
 
-        while True :
-            if (fast is None) or (fast.next is None) :
+        while True:
+            if fast is None or fast.next is None:
                 return None
 
             fast = fast.next.next
             slow = slow.next
-            if fast == slow :
+            if fast == slow:
                 break
 
 #breakの場合こちらへ
-        org = head
-        while org != slow :
-            org = org.next
+        origin = head
+        while origin != slow:
+            origin = origin.next
             slow = slow.next
-        return org
+        return origin
 ```
