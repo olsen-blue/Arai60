@@ -125,7 +125,7 @@ class Solution:
         ptr = head
 
         while ptr is not None:
-            if ptr in visited :
+            if ptr in visited:
                 return True
             visited.add(ptr)
             ptr = ptr.next
@@ -140,8 +140,8 @@ class Solution:
         visited = set()
         ptr = head
 
-        while ptr is not None :
-            if ptr in visited :
+        while ptr is not None:
+            if ptr in visited:
                 return True
             visited.add(ptr)
             ptr = ptr.next
